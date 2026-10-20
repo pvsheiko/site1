@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import LeadForm from "./components/lead-form";
 import { availablePhotographs } from "./portfolio";
 
 const instagram = "https://www.instagram.com/gwozdik/";
@@ -13,7 +15,7 @@ export default function Home() {
   const heroPhoto = availablePhotographs.find(photo => photo.id === "white");
   return <>
     <a className="skip" href="#main">Перейти к содержанию</a>
-    <header className="header"><a href="#" className="wordmark" aria-label="Gvozdik studio — главная">gvozdik<span>studio</span></a><nav aria-label="Основная навигация"><a href="#work">Работы</a><a href="#about">О студии</a><a href="#contact">Контакты</a></nav><a className="header-contact" href={instagram} target="_blank" rel="noopener noreferrer">Обсудить съёмку <Arrow diagonal /></a></header>
+    <header className="header"><a href="#" className="wordmark" aria-label="Gvozdik studio — главная">gvozdik<span>studio</span></a><nav aria-label="Основная навигация"><a href="#work">Работы</a><a href="#about">О студии</a><a href="#contact">Контакты</a></nav><a className="header-contact" href="#contact">Обсудить съёмку <Arrow diagonal /></a></header>
     <main id="main">
       <section className={`hero${heroPhoto ? " hero-with-photo" : ""}`} aria-labelledby="hero-title">
         <div className="hero-meta"><span>Фото, видео и образы</span><span>Минск, Беларусь</span></div>
@@ -43,8 +45,8 @@ export default function Home() {
         <div className="service-list"><article><span className="service-title">Фото</span><p>Женская одежда и образы в фотографиях</p></article><article><span className="service-title">Видео</span><p>Одежда и образ в движении</p></article><article><span className="service-title">Под ключ</span><p>Состав съёмки обсудим под вашу задачу</p></article></div>
       </section>
       <section className="about section" id="about" aria-labelledby="about-title"><div className="about-brand" aria-hidden="true"><Flower /><span>g.</span><p>Личный взгляд.<br />Общий замысел.</p></div><div className="about-copy"><span className="eyebrow">За кадром и в кадре</span><h2 id="about-title">Алена<br />Гвоздик</h2><p className="about-lead">Модель и лицо<br />Gvozdik studio</p><p>Съёмки женской одежды и образов для белорусских брендов. Работаем в Минске и областных городах Беларуси</p><a className="text-link" href={instagram} target="_blank" rel="noopener noreferrer">Познакомиться в Instagram <Arrow diagonal /></a></div></section>
-      <section className="contact section" id="contact" aria-labelledby="contact-title"><div className="contact-top"><span className="eyebrow">Следующая съёмка — ваша</span><span>Минск и Беларусь</span></div><h2 id="contact-title">Начнём<br />с вашей идеи<span className="contact-dot">?</span></h2><div className="contact-bottom"><p>Расскажите о бренде и будущей съёмке.<br />Обсудим задачу и формат работы</p><a className="contact-button" href={instagram} target="_blank" rel="noopener noreferrer">Написать в Instagram <Arrow diagonal /></a></div></section>
+      <section className="contact section" id="contact" aria-labelledby="contact-title"><div className="contact-top"><span className="eyebrow">Следующая съёмка — ваша</span><span>Минск и Беларусь</span></div><h2 id="contact-title">Начнём<br />с вашей идеи<span className="contact-dot">?</span></h2><div className="contact-bottom"><p>Расскажите о бренде и будущей съёмке.<br />Обсудим задачу и формат работы</p><a className="contact-button" href={instagram} target="_blank" rel="noopener noreferrer">Написать в Instagram <Arrow diagonal /></a></div><LeadForm /></section>
     </main>
-    <footer><a href="#" className="wordmark">gvozdik<span>studio</span></a><p>Фото и видео для брендов женской одежды</p><a href={instagram} target="_blank" rel="noopener noreferrer">@gwozdik</a><a className="back-top" href="#">Наверх ↑</a><span className="copyright">© Gvozdik studio</span></footer>
+    <footer><a href="#" className="wordmark">gvozdik<span>studio</span></a><p>Фото и видео для брендов женской одежды</p><a href={instagram} target="_blank" rel="noopener noreferrer">@gwozdik</a><a className="back-top" href="#">Наверх ↑</a><Link href="/privacy">Обработка данных</Link><span className="copyright">© Gvozdik studio</span></footer>
   </>;
 }
