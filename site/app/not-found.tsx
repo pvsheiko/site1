@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <main style={{minHeight:"100svh",padding:"10% 6%",display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"center",gap:30}}><p>Gvozdik studio / 404</p><h1 style={{fontSize:"clamp(40px,7vw,100px)",letterSpacing:"-.06em"}}>Этот кадр<br/>не найден</h1><Link href="/" style={{borderBottom:"1px solid",paddingBottom:8}}>Вернуться на главную</Link></main>}
